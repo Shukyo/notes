@@ -23,16 +23,17 @@
                       sec.axis = dup_axis(labels=dat[match(levels(dat$col1),dat$col1),]$col2))
   ```
 
-#### 使用默认颜色，但需要定制其中某个颜色
-```R
-gg_color_hue <- function(n) {
-  hues = seq(15, 375, length = n + 1)
-  hcl(h = hues, l = 65, c = 100)[1:n]
-}
-pal<-gg_color_hue(10)
-pal[3]<-"white"
-scale_color_manual(values=pal)
-```
+#### 颜色系统
+1. 使用默认颜色，但需要定制其中某个颜色
+  ```R
+  gg_color_hue <- function(n) {
+    hues = seq(15, 375, length = n + 1)
+    hcl(h = hues, l = 65, c = 100)[1:n]
+  }
+  pal<-gg_color_hue(10)
+  pal[3]<-"white"
+  scale_color_manual(values=pal)
+  ```
 
 #### 散点图
 1. 绘制散点图时，需要添加趋势线和R2值
