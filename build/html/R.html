@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R相关笔记 &mdash; Shoo Young&#39;s Notes 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Read the Doc安装配置" href="read_the_doc.html" />
+    <link rel="prev" title="Welcome to Shoo Young’s Notes’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Shoo Young's Notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">R相关笔记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ggplot">ggplot相关知识点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ggplot2">ggplot2常用包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ggplot中使用变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geom-barylim">使用geom_bar时设置ylim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">需要添加第二坐标轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">使用默认颜色，但需要定制其中某个颜色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r2">绘制散点图时，需要添加趋势线和R2值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">绘制累积曲线图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#count">绘制柱状图时，使用比例而非count数绘图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read_the_doc.html">Read the Doc安装配置</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Shoo Young's Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">R相关笔记</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/R.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="r">
+<h1>R相关笔记<a class="headerlink" href="#r" title="永久链接至标题"></a></h1>
+<section id="ggplot">
+<h2>ggplot相关知识点<a class="headerlink" href="#ggplot" title="永久链接至标题"></a></h2>
+<section id="ggplot2">
+<h3>ggplot2常用包<a class="headerlink" href="#ggplot2" title="永久链接至标题"></a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>使用</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>library(ggsci)</td>
+<td>使用杂志惯用颜色进行配色</td>
+</tr>
+<tr>
+<td>library(ggmisc)</td>
+<td>可在绘制趋势图时候直接添加R^2或公式</td>
+</tr>
+<tr>
+<td>library(gg.gap)</td>
+<td>可对坐标轴进行截断</td>
+</tr>
+</tbody>
+</table></section>
+<section id="id1">
+<h3>ggplot中使用变量<a class="headerlink" href="#id1" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span> <span class="n">x</span><span class="o">=</span><span class="s">&quot;variable&quot;</span>
+ <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">.data</span><span class="p">[[</span><span class="n">x</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</section>
+<section id="geom-barylim">
+<h3>使用geom_bar时设置ylim<a class="headerlink" href="#geom-barylim" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#使用ylim直接设置时，柱状图不显示</span>
+<span class="n">p</span><span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span><span class="o">+</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>需要添加第二坐标轴<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">scale_y_continuous</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span><span class="n">sec.axis</span><span class="o">=</span><span class="nf">dup_axis</span><span class="p">(</span><span class="o">~</span><span class="n">.</span><span class="p">)</span>
+
+<span class="c1"># 需要在离散变量的第二坐标轴上添加label(scale_y_discrete不支持sec.axis)</span>
+<span class="c1"># 将离散变量强制转化成连续变量</span>
+<span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">col1</span><span class="p">)),</span><span class="n">labels</span><span class="o">=</span> <span class="nf">levels</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">col1</span><span class="p">)),</span>
+                    <span class="n">sec.axis</span> <span class="o">=</span> <span class="nf">dup_axis</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">dat</span><span class="p">[</span><span class="nf">match</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">col1</span><span class="p">),</span><span class="n">dat</span><span class="o">$</span><span class="n">col1</span><span class="p">),]</span><span class="o">$</span><span class="n">col2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>使用默认颜色，但需要定制其中某个颜色<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">gg_color_hue</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">hues</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">375</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span>
+  <span class="nf">hcl</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="n">hues</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="m">65</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">100</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">pal</span><span class="o">&lt;-</span><span class="nf">gg_color_hue</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">pal</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="o">&lt;-</span><span class="s">&quot;white&quot;</span>
+<span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="n">pal</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="r2">
+<h3>绘制散点图时，需要添加趋势线和R2值<a class="headerlink" href="#r2" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggpmisc</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="kc">...</span><span class="p">)</span><span class="o">+</span><span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
+<span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
+<span class="nf">stat_poly_eq</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span><span class="o">=</span> <span class="n">..rr.label..</span><span class="p">),</span><span class="n">formula</span> <span class="o">=</span><span class="n">y</span><span class="o">~</span><span class="n">x</span> <span class="p">,</span><span class="n">parse</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">,</span><span class="n">na.rm</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>绘制累积曲线图<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="kc">...</span><span class="p">)</span> <span class="o">+</span> <span class="nf">geom_step</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">..y..</span><span class="p">),</span><span class="n">stat</span><span class="o">=</span><span class="s">&quot;ecdf&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</section>
+<section id="count">
+<h3>绘制柱状图时，使用比例而非count数绘图<a class="headerlink" href="#count" title="永久链接至标题"></a></h3>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_bar</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">..prop..</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">..prop..</span><span class="p">)),</span><span class="n">stat</span><span class="o">=</span><span class="s">&quot;count&quot;</span><span class="p">,</span><span class="n">show.legend</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+<span class="c1">#OR</span>
+<span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_bar</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">),</span><span class="n">position</span> <span class="o">=</span> <span class="s">&quot;fill&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Shoo Young’s Notes’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="read_the_doc.html" class="btn btn-neutral float-right" title="Read the Doc安装配置" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, Shoo Young.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

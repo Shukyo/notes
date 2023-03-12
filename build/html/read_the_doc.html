@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read the Doc安装配置 &mdash; Shoo Young&#39;s Notes 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="R相关笔记" href="R.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Shoo Young's Notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="R.html">R相关笔记</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Read the Doc安装配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">更换主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#markdown">配置markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">中文搜索</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Shoo Young's Notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Read the Doc安装配置</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/read_the_doc.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="read-the-doc">
+<h1>Read the Doc安装配置<a class="headerlink" href="#read-the-doc" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>安装<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ol>
+<li><p>软件安装</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx
+</pre></div>
+</div>
+</li>
+<li><p>创建工作目录及项目</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> mkdir notes <span class="o">&amp;&amp;</span> <span class="nb">cd</span> notes
+ sphinx-quickstart
+</pre></div>
+</div>
+</li>
+<li><p>部署http服务(打开http://127.0.0.1:8000即可看到对应的页面)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx-autobuild
+sphinx-autobuild <span class="nb">source</span> build/html 
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h2>配置<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<section id="id3">
+<h3>更换主题<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<ol>
+<li><p>查看可用主题https://sphinx-themes.org/</p></li>
+<li><p>安装主题</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx_rtd_theme
+</pre></div>
+</div>
+</li>
+<li><p>修改conf.py中内容</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="markdown">
+<h3>配置markdown<a class="headerlink" href="#markdown" title="永久链接至标题"></a></h3>
+<ol>
+<li><p>安装插件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 支持markdown</span>
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple recommonmark
+<span class="c1"># 支持markdown表格</span>
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple sphinx_markdown_tables
+</pre></div>
+</div>
+</li>
+<li><p>在conf.py中配置extention</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;recommonmark&#39;</span><span class="p">,</span><span class="s1">&#39;sphinx_markdown_tables&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h3>中文搜索<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<ol>
+<li><p>安装“结巴”中文分词</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># python2</span>
+pip install jieba
+<span class="c1"># python3</span>
+pip install jieba3k
+</pre></div>
+</div>
+</li>
+<li><p>安装sphinx中文搜索插件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/bosbyj/sphinx.search.zh_CN.git
+<span class="c1"># conda</span>
+mv sphinx.search.zh_CN/zh_CN.py ~/anaconda3/lib/python3.9/site-packages/sphinx/search/
+</pre></div>
+</div>
+</li>
+<li><p>编辑search目录下__init__.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">languages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="n">en</span><span class="o">.</span><span class="n">SearchEnglish</span><span class="p">,</span>
+    <span class="s1">&#39;ja&#39;</span><span class="p">:</span> <span class="n">ja</span><span class="o">.</span><span class="n">SearchJapanese</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="c1">#增加一行</span>
+<span class="s1">&#39;zh_CN&#39;</span><span class="p">:</span> <span class="s1">&#39;sphinx.search.zh_CN.SearchChinese&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+<li><p>确保conf.py中添加 <code class="docutils literal notranslate"><span class="pre">language</span> <span class="pre">=</span> <span class="pre">'zh_CN'</span></code></p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="R.html" class="btn btn-neutral float-left" title="R相关笔记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, Shoo Young.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
