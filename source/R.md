@@ -2,8 +2,6 @@
 
 
 ### ggplot相关知识点
-
-
 #### ggplot2常用包
 
 | 使用            | 介绍                                |
@@ -13,6 +11,7 @@
 | library(gg.gap) | 可对坐标轴进行截断                  |
 
 #### 坐标系统
+
 1. 需要添加第二坐标轴
   ```R
   scale_y_continuous(...,sec.axis=dup_axis(~.)
@@ -36,6 +35,7 @@
   ```
 
 #### 散点图
+
 1. 绘制散点图时，需要添加趋势线和R2值
   ```R
   library(ggpmisc)
@@ -45,12 +45,14 @@
   ```
 
 #### 累积曲线图
+
 1. 绘制累积曲线图
   ```R
   ggplot(...) + geom_step(aes(y=..y..),stat="ecdf") 
   ```
 
 #### 柱状图
+
 1. 绘制柱状图时，使用比例而非count数绘图
   ```R
   ggplot() + geom_bar(aes(y,..prop..,group=1,fill=factor(..prop..)),stat="count",show.legend=F)
@@ -64,8 +66,10 @@
   p+geom_bar(stat="identity")+coord_cartesian(ylim=c(1,2))
   ```
 
-#### ggplot中使用变量
-```R
- x="variable"
- ggplot(aes(.data[[x]]))
-```
+#### 其它
+
+1. ggplot中使用变量
+  ```R
+  x="variable"
+  ggplot(aes(.data[[x]]))
+  ```
